@@ -610,17 +610,23 @@ break;
 
             break;
           case 'SUS-2B':
-
-            var_Thick += "<option value='1'>1</option>";
+	
+	    var_Thick += "<option value='0.6'>0.6</option>";
+            var_Thick += "<option value='0.8'>0.8</option>";    
+	    var_Thick += "<option value='1'>1</option>";
             var_Thick += "<option value='1.2'>1.2</option>";
             var_Thick += "<option value='1.5'>1.5</option>";
             var_Thick += "<option value='2'>2</option>";
 
             break;
           case 'SUS-HL':
-            var_Thick += "<option value='1'>1</option>";
+	    var_Thick += "<option value='0.6'>0.6</option>";
+            var_Thick += "<option value='0.8'>0.8</option>";    
+	    var_Thick += "<option value='1'>1</option>";
+            var_Thick += "<option value='1.2'>1.2</option>";
             var_Thick += "<option value='1.5'>1.5</option>";
             var_Thick += "<option value='2'>2</option>";
+			
             break;
           case 'SUS-PL':
             var_Thick += "<option value='1'>1</option>";
@@ -704,6 +710,8 @@ break;
             break;
           case 'SUS-2B':
 
+	    var_Thick += "<option value='0.6'>0.6</option>";		
+	    var_Thick += "<option value='0.8'>0.8</option>";
             var_Thick += "<option value='1'>1</option>";
             var_Thick += "<option value='1.2'>1.2</option>";
             var_Thick += "<option value='1.5'>1.5</option>";
@@ -711,9 +719,13 @@ break;
 
             break;
           case 'SUS-HL':
+            var_Thick += "<option value='0.6'>0.6</option>";		
+	    var_Thick += "<option value='0.8'>0.8</option>";
             var_Thick += "<option value='1'>1</option>";
+            var_Thick += "<option value='1.2'>1.2</option>";
             var_Thick += "<option value='1.5'>1.5</option>";
             var_Thick += "<option value='2'>2</option>";
+			
             break;
           case 'SUS-PL':
             var_Thick += "<option value='1'>1</option>";
@@ -1328,11 +1340,13 @@ break;
 
   function downImg(){
 
+<!--
 if(iTotalPay < 10000)
 {
   alert("최소 주문 금액은 10,000\\ 입니다.");
   
 }
+-->
 
       html2canvas($("#right_main")[0]).then(function(canvas){
           var myImage = canvas.toDataURL();
@@ -1360,7 +1374,7 @@ if(iTotalPay < 10000)
             //var str_time = `${year}_ ${date}` + `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`; 
 
      
-          downloadURI(myImage, str_time+"_레이저마켓_견적서.png") 
+          downloadURI(myImage, str_time+"_스텐제작소_견적서.png") 
       });
   }
 
@@ -1382,7 +1396,7 @@ if(iTotalPay < 10000)
       // var table2excel = new Table2Excel();
       // table2excel.expert(document.querySelectorAll("#Table_Right"));
       var wb = XLSX.utils.table_to_book(document.getElementById('Table_Right'), {sheet:"견적",raw:true});
-XLSX.writeFile(wb, ('레이저마켓견적파일.xlsx'));
+XLSX.writeFile(wb, ('스텐제작소견적파일.xlsx'));
     }catch(error)
     {
       alert(error);
